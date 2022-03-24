@@ -145,7 +145,7 @@ limitations under the License.
                     }
 
                     var query = $(this).val();
-                    var searchPage = "https://tjohander-splunk.github.io/realtime_enrichment/search/?q=" + query;
+                    var searchPage = "https://leungsteve.github.io/realtime_enrichment/search/?q=" + query;
                     document.location = searchPage;
 
                     return false;
