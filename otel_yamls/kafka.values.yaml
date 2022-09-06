@@ -1,4 +1,4 @@
-otelAgent:
+agent:
   config:
     receivers:
       receiver_creator:
@@ -6,12 +6,11 @@ otelAgent:
           smartagent/kafka:
             rule: type == "pod" && name matches "kafka"
             config:
-                    #endpoint: '`endpoint`:5555'
               port: 5555
               type: collectd/kafka
-              clusterName: sl-kafka
-otelK8sClusterReceiver:
-  k8sEventsEnabled: true
+              clusterName: aev-kafka
+clusterReceiver:
+  eventsEnabled: true
   config:
     receivers:
       kafkametrics:
@@ -25,6 +24,5 @@ otelK8sClusterReceiver:
       pipelines:
         metrics:
           receivers:
-                  #- prometheus
           - k8s_cluster
           - kafkametrics

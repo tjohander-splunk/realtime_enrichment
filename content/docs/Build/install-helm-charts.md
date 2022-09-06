@@ -12,9 +12,11 @@ Install the Kafka and MongoDB with helm charts. Note that for Kafka, replicaCoun
 Install the Helm Charts for Kafka and MongoDB.  This will automatically provide MongoDB and the required Kafka resource to our Application stack
 ```bash
 helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo update
 helm install kafka --set replicaCount=3 --set metrics.jmx.enabled=true --set metrics.kafka.enabled=true  --set zookeeper.metrics.enabled=true --set deleteTopicEnable=true bitnami/kafka
-helm install mongodb --set metrics.enabled=true bitnami/mongodb --set global.namespaceOverride=default --set auth.rootUser=root --set auth.rootPassword=splunk --set auth.enabled=false
+helm install mongodb --set metrics.enabled=true bitnami/mongodb --set global.namespaceOverride=default --set auth.rootUser=root --set auth.rootPassword=splunk --set auth.enabled=false --version 12.1.31
 ```
+> Note: As of Sept 2022, The MongoDB Helm Chart is pinned to an older version due to incompatibility of Mongo 6.x with the Splunk Otel Receiver MongoDB Receiver.  
 
 ### Install Splunk Otel Helm Chart
 

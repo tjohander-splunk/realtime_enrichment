@@ -23,10 +23,10 @@ At a high-level, the application consists of the following microservices:
 
 The following illustrates how the different microservices interact with one another.
 
-![Application Data Pipeline](../images/Architecture.jpg)
+![Application Data Pipeline](images/Architecture.jpg)
 
 ## Environment
 The following illustrates the environment where this application is running on and how the logs, metrics and traces are captured and sent to Splunk Observability Cloud.
 
-![infrastructure](../images/Infrastructure.jpg)
+![infrastructure](images/Infrastructure.jpg)
 

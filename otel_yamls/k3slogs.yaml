@@ -1,7 +1,7 @@
 clusterName: sl-K3s
 splunkObservability:
-  realm: us1
-  accessToken: xyz
+  realm: $SPLUNK_REALM
+  accessToken: $SPLUNK_ACCESS_TOKEN
 
 fluentd:
   config:
