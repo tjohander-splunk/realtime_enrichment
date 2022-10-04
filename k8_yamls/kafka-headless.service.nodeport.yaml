@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app.kubernetes.io/name: kafka
-  name: kafka-headless-sl
+  name: kafka-headless
   namespace: default
 spec:
   ports:
@@ -20,4 +20,3 @@ spec:
   selector:
     app.kubernetes.io/name: kafka
   type: NodePort
-status:

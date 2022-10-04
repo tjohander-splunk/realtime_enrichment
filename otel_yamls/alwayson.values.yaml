@@ -24,4 +24,3 @@ agent:
 splunkObservability:
   accessToken: $SPLUNK_ACCESS_TOKEN
   realm: $SPLUNK_REALM
-splunkRealm: $SPLUNK_REALM

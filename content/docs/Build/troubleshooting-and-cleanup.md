@@ -36,3 +36,12 @@ To run curl:
 ```
 kubectl run curl --restart='Never' --image curlimages/curl --command -- sleep infinity
 kubectl exec curl -- curl -s http://www.google.com
+```
+
+To Clean Up After Deleting Kafka & Mongo
+ If you find your delete things and start over (common), make sure you also remove the `PersistentVolumes` and `PersistentVolumeClaim` K8s resources.
+```bash
+kubectl delete pvc --all
+kubectl delete pv --all
+```   
+A command like kubectl delete pvc --all and kubectl delete pv --all should do the trick.  These would be executed after uninstalling the two Helm charts.
